@@ -452,7 +452,7 @@ class Talk
         if (!is_null($messageId)) {
             $message = $this->message->with(['sender', 'conversation'])->find($messageId);
 
-            if ($message->coversation->user_one == $this->authUserId || $message->coversation->user_two == $this->authUserId) {
+            if ($message->conversation->user_one == $this->authUserId || $message->conversation->user_two == $this->authUserId) {
                 return $message;
             }
         }
